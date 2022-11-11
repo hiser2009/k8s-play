@@ -15,4 +15,4 @@ data:
     color.good=purple
     color.bad=yellow
     allow.textmode=true
-    FOO=BAR
+  FOO=BAR
