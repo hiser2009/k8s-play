@@ -29,15 +29,18 @@ jobs:
       - checkout
       - run:
           name: "Install Kubeconform"
-          command: go install github.com/yannh/kubeconform/cmd/kubeconform@latest
-      - run:
-          name: "Check Kubeconform Version"
-          command: |
+          command: | 
+            go install github.com/yannh/kubeconform/cmd/kubeconform@latest
             kubeconform -v
-      - run:
-          name: "Good Test"
-          command: |
             kubeconform -summary -output json overlays/ .
+      # - run:
+      #     name: "Check Kubeconform Version"
+      #     command: |
+      #       kubeconform -v
+      # - run:
+      #     name: "Good Test"
+      #     command: |
+      #       kubeconform -summary -output json overlays/ .
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
