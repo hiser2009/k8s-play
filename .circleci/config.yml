@@ -34,22 +34,14 @@ jobs:
             kubeconform -v
             cd overlays
             kubeconform -summary -output json .
-      - run:
-          name: "Install Kubeval"
-          command: | 
-            wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
-            tar xf kubeval-linux-amd64.tar.gz
-            sudo cp kubeval /usr/local/bin
-            cd overlays/
-            kubeval -d alpha/  -o json
       # - run:
-      #     name: "Check Kubeconform Version"
-      #     command: |
-      #       kubeconform -v
-      # - run:
-      #     name: "Good Test"
-      #     command: |
-      #       kubeconform -summary -output json overlays/ .
+      #     name: "Install Kubeval"
+      #     command: | 
+      #       wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+      #       tar xf kubeval-linux-amd64.tar.gz
+      #       sudo cp kubeval /usr/local/bin
+      #       cd overlays/
+      #       kubeval -d alpha/  -o json
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
