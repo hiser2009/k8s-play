@@ -33,7 +33,7 @@ jobs:
       - run:
           name: "Check Kubeconform Version"
           command: |
-            "kubeconform -v"
+            kubeconform -v
       - run:
           name: "Good Test"
           command: |
