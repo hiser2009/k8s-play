@@ -32,7 +32,8 @@ jobs:
           command: | 
             go install github.com/yannh/kubeconform/cmd/kubeconform@latest
             kubeconform -v
-            kubeconform -summary -output json overlays/ .
+            cd overlays
+            kubeconform -summary -output json .
       # - run:
       #     name: "Check Kubeconform Version"
       #     command: |
