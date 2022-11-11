@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Install Kubeconform"
+          name: "Lint K8S YAML"
           command: | 
             go install github.com/yannh/kubeconform/cmd/kubeconform@latest
             kubeconform -v
