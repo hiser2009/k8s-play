@@ -34,6 +34,13 @@ jobs:
             kubeconform -v
             cd overlays
             kubeconform -summary -output json .
+      - run:
+          name: "Install Kubeval"
+          command: | 
+            wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+            tar xf kubeval-linux-amd64.tar.gz
+            sudo cp kubeval /usr/local/bin
+            kubeval overlays/ . -o json
       # - run:
       #     name: "Check Kubeconform Version"
       #     command: |
