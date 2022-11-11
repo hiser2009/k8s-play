@@ -40,7 +40,7 @@ jobs:
             wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
             tar xf kubeval-linux-amd64.tar.gz
             sudo cp kubeval /usr/local/bin
-            cd overlays/
+            cd overlays/ && ls
             kubeval . -o json
       # - run:
       #     name: "Check Kubeconform Version"
